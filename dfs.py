@@ -9,7 +9,7 @@ def dfs_solver(start_state, goal_state):
     stack.append(start_state)
     parent[start_state] = start_state
     nodes_expanded = 0
-    
+
     while stack:
         curr = stack.pop()
         explored.add(curr)
@@ -27,7 +27,11 @@ def dfs_solver(start_state, goal_state):
                 frontier_explored.add(neighbour)
                 parent[neighbour] = curr
 
-    return (False,'')
+    return (False, "")
 
-_ , _ , nodes_expanded = dfs_solver('087654321', '012345678')
+
+_, res, nodes_expanded = dfs_solver("087654321", "012345678")
+cost = res[0]
+path = res[1]
+print("Cost:", cost)
 print("Nodes expanded:", nodes_expanded)

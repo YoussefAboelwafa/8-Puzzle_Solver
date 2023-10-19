@@ -7,7 +7,7 @@ def is_solvable(state):
 
 def getInvCount(arr):
     inv_count = 0
-    empty_value = '0'
+    empty_value = "0"
     for i in range(0, 9):
         for j in range(i + 1, 9):
             if arr[j] != empty_value and arr[i] != empty_value and arr[i] > arr[j]:
@@ -71,6 +71,4 @@ def print_path(parent, goal_state):
     #             print()
     #         print("-------")
 
-    print("cost:", cost)
     return (cost, path)
-    

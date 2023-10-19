@@ -27,7 +27,11 @@ def bfs_solver(start_state, goal_state):
                 fronteir_explored.add(neighbour)
                 parent[neighbour] = curr
 
-    return (False, '')
+    return (False, "")
 
-_ , _ , nodes_expanded = bfs_solver('087654321', '012345678')
+
+_, res, nodes_expanded = bfs_solver("087654321", "012345678")
+cost = res[0]
+path = res[1]
+print("Cost:", cost)
 print("Nodes expanded:", nodes_expanded)
