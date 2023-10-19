@@ -16,8 +16,8 @@ def bfs_solver(start_state, goal_state):
         fronteir_explored.add(curr)
 
         if curr == goal_state:
-            print_path(parent, goal_state)
-            return True
+            res = print_path(parent, goal_state)
+            return (True, res)
 
         neighbours = getNeighbours(curr)
         for neighbour in neighbours:
@@ -26,4 +26,4 @@ def bfs_solver(start_state, goal_state):
                 fronteir_explored.add(neighbour)
                 parent[neighbour] = curr
 
-    return False
+    return (False, '')

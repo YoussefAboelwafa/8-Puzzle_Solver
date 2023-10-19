@@ -51,22 +51,26 @@ def print_path(parent, goal_state):
         cost += 1
     path.append(curr)
     path.reverse()
-    for state in path:
-        if state == goal_state:
-            flatten = list(state)
-            mat = [flatten[0:3], flatten[3:6], flatten[6:9]]
-            for row in mat:
-                for col in row:
-                    print(col, end="|")
-                print()
-            print("-------")
-        else:
-            flatten = list(state)
-            mat = [flatten[0:3], flatten[3:6], flatten[6:9]]
-            for row in mat:
-                for col in row:
-                    print(col, end="|")
-                print()
-            print("-------")
+    # arr=[]
+    # for state in path:
+    #     arr.append(state)
+        # if state == goal_state:
+        #     flatten = list(state)
+        #     mat = [flatten[0:3], flatten[3:6], flatten[6:9]]
+        #     for row in mat:
+        #         for col in row:
+        #             print(col, end="|")
+        #         print()
+        #     print("-------")
+        # else:
+        #     flatten = list(state)
+        #     mat = [flatten[0:3], flatten[3:6], flatten[6:9]]
+        #     for row in mat:
+        #         for col in row:
+        #             print(col, end="|")
+        #         print()
+        #     print("-------")
 
     print("cost:", cost)
+    return (cost, path)
+    
