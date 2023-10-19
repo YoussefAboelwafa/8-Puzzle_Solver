@@ -21,7 +21,7 @@ def dfs_solver(start_state, goal_state):
 
         neighbours = getNeighbours(curr)
         for neighbour in neighbours:
-            if neighbour not in frontier_explored and neighbour not in explored:
+            if neighbour not in frontier_explored:
                 stack.append(neighbour)
                 frontier_explored.add(neighbour)
                 parent[neighbour] = curr

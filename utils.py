@@ -59,7 +59,7 @@ def print_path(parent, goal_state):
                 for col in row:
                     print(col, end="|")
                 print()
-            print("----------")
+            print("-------")
         else:
             flatten = list(state)
             mat = [flatten[0:3], flatten[3:6], flatten[6:9]]
@@ -67,6 +67,6 @@ def print_path(parent, goal_state):
                 for col in row:
                     print(col, end="|")
                 print()
-            print("----------")
+            print("-------")
 
     print("cost:", cost)
