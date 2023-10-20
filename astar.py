@@ -52,13 +52,3 @@ def astar(start_state, goal_state, heuristic):
                 frontier_explored.add(neighbour)
                 parent[neighbour] = curr[1]
     return (False, "")
-
-
-start_time = time.time()
-_, res, nodes_expanded = astar("182043765", "012345678", "manhatan")
-end_time = time.time()
-cost = res[0]
-path = res[1]
-print("Cost:", cost)
-print("Nodes expanded:", nodes_expanded)
-print("Time taken:", (end_time - start_time) * 1000, "ms")
