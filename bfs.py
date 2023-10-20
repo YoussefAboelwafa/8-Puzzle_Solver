@@ -1,4 +1,5 @@
 import queue
+import time
 from utils import *
 
 
@@ -30,8 +31,11 @@ def bfs_solver(start_state, goal_state):
     return (False, "")
 
 
-_, res, nodes_expanded = bfs_solver("087654321", "012345678")
+start_time = time.time()          
+_, res, nodes_expanded = bfs_solver("867254301", "012345678")
+end_time = time.time()
 cost = res[0]
 path = res[1]
 print("Cost:", cost)
 print("Nodes expanded:", nodes_expanded)
+print("Time taken:", (end_time - start_time)*1000, "ms")
