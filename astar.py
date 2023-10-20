@@ -3,7 +3,7 @@ import time
 from utils import *
 
 
-def manhtan(state, goal):
+def manhatan(state, goal):
     cost = 0
     for i in range(9):
         if state[i] != "0":
@@ -45,8 +45,8 @@ def astar(start_state, goal_state, heuristic):
         for neighbour in neighbours:
             cost += 1
             if neighbour not in frontier_explored:
-                if heuristic == "manhtan":
-                    frontier.put((manhtan(neighbour, goal_state) + cost, neighbour))
+                if heuristic == "manhatan":
+                    frontier.put((manhatan(neighbour, goal_state) + cost, neighbour))
                 else:
                     frontier.put((eucledian(neighbour, goal_state) + cost, neighbour))
                 frontier_explored.add(neighbour)
@@ -55,7 +55,7 @@ def astar(start_state, goal_state, heuristic):
 
 
 start_time = time.time()
-_, res, nodes_expanded = astar("182043765", "012345678", "eculidean")
+_, res, nodes_expanded = astar("182043765", "012345678", "manhatan")
 end_time = time.time()
 cost = res[0]
 path = res[1]
