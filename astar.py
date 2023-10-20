@@ -33,6 +33,7 @@ def astar(start_state, goal_state, heuristic):
     parent[start_state] = start_state
     nodes_expanded = 0
     cost = 0
+
     while not frontier.empty():
         curr = frontier.get()
         explored.add(curr[1])
@@ -42,13 +43,17 @@ def astar(start_state, goal_state, heuristic):
             res = print_path(parent, goal_state)
             return (True, res, nodes_expanded)
         neighbours = getNeighbours(curr[1])
+
         for neighbour in neighbours:
             cost += 1
-            if neighbour not in frontier_explored:
+            if neighbour not in frontier_explored and neighbour not in explored:
                 if heuristic == "manhatan":
-                    frontier.put((manhatan(neighbour, goal_state) + cost, neighbour))
+                    priority = manhatan(neighbour, goal_state) + cost
                 else:
-                    frontier.put((eucledian(neighbour, goal_state) + cost, neighbour))
+                    priority = eucledian(neighbour, goal_state) + cost
+
+                frontier.put((priority, neighbour))
                 frontier_explored.add(neighbour)
                 parent[neighbour] = curr[1]
+
     return (False, "")

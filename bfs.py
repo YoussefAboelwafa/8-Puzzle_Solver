@@ -6,7 +6,7 @@ from utils import *
 def bfs_solver(start_state, goal_state):
     frontier = queue.Queue()
     explored = set()
-    fronteir_explored = set()
+    frontier_explored = set()
     parent = dict()
     frontier.put(start_state)
     parent[start_state] = start_state
@@ -15,7 +15,7 @@ def bfs_solver(start_state, goal_state):
     while not frontier.empty():
         curr = frontier.get()
         explored.add(curr)
-        fronteir_explored.add(curr)
+        frontier_explored.add(curr)
         nodes_expanded += 1
         if curr == goal_state:
             res = print_path(parent, goal_state)
@@ -23,9 +23,9 @@ def bfs_solver(start_state, goal_state):
 
         neighbours = getNeighbours(curr)
         for neighbour in neighbours:
-            if neighbour not in fronteir_explored:
+            if neighbour not in frontier_explored:
                 frontier.put(neighbour)
-                fronteir_explored.add(neighbour)
+                frontier_explored.add(neighbour)
                 parent[neighbour] = curr
 
     return (False, "")
