@@ -26,8 +26,6 @@ def eucledian(state, goal):
 
 def astar(start_state, goal_state, heuristic):
     frontier = queue.PriorityQueue()
-    # explored = set()
-    # frontier_explored = set()
     parent = dict()
     frontier.put((0, start_state))
     parent[start_state] = start_state
@@ -37,27 +35,22 @@ def astar(start_state, goal_state, heuristic):
 
     while not frontier.empty():
         curr = frontier.get()
-        # explored.add(curr[1])
-        # frontier_explored.add(curr[1])
-        
         if curr[1] == goal_state:
             res = print_path(parent, goal_state)
             return (True, res, nodes_expanded)
         neighbours = getNeighbours(curr[1])
-        
+
         for neighbour in neighbours:
             nodes_expanded += 1
-            newcost=cost[curr[1]]+1
-            if neighbour not in cost or newcost<cost[neighbour]:
+            newcost = cost[curr[1]] + 1
+            if neighbour not in cost or newcost < cost[neighbour]:
                 if heuristic == "manhatan":
                     priority = manhatan(neighbour, goal_state) + newcost
                 else:
                     priority = eucledian(neighbour, goal_state) + newcost
 
                 frontier.put((priority, neighbour))
-                cost[neighbour]=newcost
+                cost[neighbour] = newcost
                 parent[neighbour] = curr[1]
-            
-
 
     return (False, "")
