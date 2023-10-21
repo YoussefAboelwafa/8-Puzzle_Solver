@@ -16,13 +16,13 @@ def bfs_solver(start_state, goal_state):
         curr = frontier.get()
         explored.add(curr)
         frontier_explored.add(curr)
-        nodes_expanded += 1
         if curr == goal_state:
             res = print_path(parent, goal_state)
             return (True, res, nodes_expanded)
 
         neighbours = getNeighbours(curr)
         for neighbour in neighbours:
+            nodes_expanded += 1
             if neighbour not in frontier_explored:
                 frontier.put(neighbour)
                 frontier_explored.add(neighbour)
