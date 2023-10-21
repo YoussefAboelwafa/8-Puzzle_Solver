@@ -12,6 +12,7 @@ def dfs_solver(start_state, goal_state):
     nodes_expanded = 0
 
     while stack:
+        nodes_expanded += 1
         curr = stack.pop()
         explored.add(curr)
         frontier_explored.add(curr)
@@ -25,7 +26,6 @@ def dfs_solver(start_state, goal_state):
             if neighbour not in frontier_explored:
                 stack.append(neighbour)
                 frontier_explored.add(neighbour)
-                nodes_expanded += 1
                 parent[neighbour] = curr
 
     return (False, "")
