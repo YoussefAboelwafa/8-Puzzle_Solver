@@ -41,7 +41,6 @@ def astar(start_state, goal_state, heuristic):
         neighbours = getNeighbours(curr[1])
 
         for neighbour in neighbours:
-            nodes_expanded += 1
             newcost = cost[curr[1]] + 1
             if neighbour not in cost or newcost < cost[neighbour]:
                 if heuristic == "manhatan":
@@ -49,6 +48,7 @@ def astar(start_state, goal_state, heuristic):
                 else:
                     priority = eucledian(neighbour, goal_state) + newcost
 
+                nodes_expanded += 1
                 frontier.put((priority, neighbour))
                 cost[neighbour] = newcost
                 parent[neighbour] = curr[1]

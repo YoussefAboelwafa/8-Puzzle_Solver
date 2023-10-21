@@ -22,9 +22,9 @@ def bfs_solver(start_state, goal_state):
 
         neighbours = getNeighbours(curr)
         for neighbour in neighbours:
-            nodes_expanded += 1
             if neighbour not in frontier_explored:
                 frontier.put(neighbour)
+                nodes_expanded += 1
                 frontier_explored.add(neighbour)
                 parent[neighbour] = curr
 
