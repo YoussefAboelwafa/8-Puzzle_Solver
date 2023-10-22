@@ -51,8 +51,6 @@ def print_path(parent, goal_state):
         cost += 1
     path.append(curr)
     path.reverse()
-    return (cost, path)
-
     # arr=[]
     # for state in path:
     #     arr.append(state)
@@ -72,3 +70,7 @@ def print_path(parent, goal_state):
     #                 print(col, end="|")
     #             print()
     #         print("-------")
+
+    return (cost, path)
+
+   

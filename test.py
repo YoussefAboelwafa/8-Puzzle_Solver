@@ -7,8 +7,15 @@ from utils import *
 RED = "\033[91m"
 RESET = "\033[0m"
 
-start_state = "647850321"
-goal_state = "123456780"
+
+state1 = "867254301"  # hard
+state2 = "102345678"  # easy
+state3 = "647850321"  # hard 2
+state4 = "812643765"  # Unsolvable
+state5 = "012345678"  # easy TOP eltarsh
+
+start_state = state1
+goal_state = "012345678"
 
 if is_solvable(start_state):
     start_time1 = time.time()
