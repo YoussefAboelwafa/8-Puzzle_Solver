@@ -7,14 +7,7 @@ from utils import *
 RED = "\033[91m"
 RESET = "\033[0m"
 
-
-state1 = "867254301"  # hard
-state2 = "102345678"  # easy
-state3 = "647850321"  # hard 2
-state4 = "812643765"  # Unsolvable
-state5 = "012345678"  # easy TOP eltarsh
-
-start_state = state1
+start_state = "762853014"
 goal_state = "012345678"
 
 if is_solvable(start_state):

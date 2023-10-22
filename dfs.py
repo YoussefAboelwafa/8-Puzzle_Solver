@@ -18,7 +18,7 @@ def dfs_solver(start_state, goal_state):
         nodes_expanded += 1
         curr = stack.pop()
         explored.add(curr)
-        frontier_explored.add(curr) 
+        frontier_explored.add(curr)
 
         if curr == goal_state:
             res = print_path(parent, goal_state)
