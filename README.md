@@ -4,13 +4,13 @@
 
 ## Deployment
 
-- To Run Graphical Interface:
+To Run Graphical Interface:
 
 ```bash
  python main.py
 ```
 
-- To Run The Test File to Compare Different Algorithms:
+To Run The Test File to Compare Different Algorithms:
 
 ```bash
  python test.py
