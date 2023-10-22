@@ -12,6 +12,10 @@
 
 - To Run The Test File to Compare Different Algorithms:
 
+```bash
+ python test.py
+```
+
 ## Data Structure Used
 
 ### DFS &rarr; Stack as frontier to store states
