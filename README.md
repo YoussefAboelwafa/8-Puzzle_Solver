@@ -18,11 +18,11 @@
 
 ## Data Structure Used
 
-### DFS &rarr; Stack as frontier to store states
+<strong>DFS</strong> &rarr; Stack as frontier to store states
 
-### BFS &rarr; Queue as frontier to store states
+<strong>BFS</strong> &rarr; Queue as frontier to store states
 
-### A\* &rarr; Priority Queue as frontier to store states
+<strong>A</strong> &rarr; Priority Queue as frontier to store states
 
 ## Algorithms Used
 
