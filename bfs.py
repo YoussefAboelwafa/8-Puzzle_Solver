@@ -19,7 +19,7 @@ def bfs_solver(start_state, goal_state):
         frontier_explored.add(curr)
         if curr == goal_state:
             res = print_path(parent, goal_state)
-            return (True, res, nodes_expanded)
+            return (True, res, nodes_expanded, res[0])
 
         neighbours = getNeighbours(curr)
         for neighbour in neighbours:

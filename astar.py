@@ -38,7 +38,7 @@ def astar(start_state, goal_state, heuristic):
         curr = frontier.get()
         if curr[1] == goal_state:
             res = print_path(parent, goal_state)
-            return (True, res, nodes_expanded)
+            return (True, res, nodes_expanded, res[0])
         neighbours = getNeighbours(curr[1])
 
         for neighbour in neighbours:
