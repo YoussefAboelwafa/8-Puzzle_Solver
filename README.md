@@ -22,7 +22,7 @@
 
 <strong>BFS</strong> &rarr; Queue as frontier to store states
 
-<strong>A</strong> &rarr; Priority Queue as frontier to store states
+<strong>A*</strong> &rarr; Priority Queue as frontier to store states
 
 ## Algorithms Used
 
