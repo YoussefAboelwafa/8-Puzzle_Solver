@@ -1,6 +1,7 @@
 from utils import *
 from bfs import bfs_solver
 from dfs import dfs_solver
+from astar import astar
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from steps import Steps_window
@@ -294,6 +295,29 @@ class Ui_MainWindow(object):
         self.frame_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_3.setObjectName("frame_3")
+
+        self.button_group =QtWidgets.QButtonGroup()
+
+        self.radioButtons1= QtWidgets.QRadioButton(self.frame_3)
+        self.radioButtons1.setGeometry(QtCore.QRect(550, 10, 82, 17))
+        self.radioButtons1.setObjectName("radioButton")
+        self.radioButtons1.setChecked(True)
+        self.radioButtons1.setText("Manhattan")
+
+        self.button_group.addButton(self.radioButtons1)
+        
+        self.radioButtons2= QtWidgets.QRadioButton(self.frame_3)
+        self.radioButtons2.setGeometry(QtCore.QRect(550, 30, 82, 17))
+        self.radioButtons2.setObjectName("radioButton")
+        self.radioButtons2.setText("Euclidean")
+        self.button_group.addButton(self.radioButtons2)
+
+
+        
+
+
+
+
         self.pushButton = QtWidgets.QPushButton(self.frame_3)
         self.pushButton.setGeometry(QtCore.QRect(340, 50, 91, 21))
         self.pushButton.setStyleSheet("QPushButton{\n"
@@ -318,6 +342,7 @@ class Ui_MainWindow(object):
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
+        self.comboBox.currentTextChanged.connect(self.show_radios)
         self.verticalLayout.addWidget(self.frame_3)
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -384,7 +409,13 @@ class Ui_MainWindow(object):
             elif self.comboBox.currentText() == 'DFS':
                 self.res = dfs_solver(start_state, end_state)
             else:
-                pass
+                hueristics=""
+                if self.radioButtons1.isChecked:
+                    hueristics="manhatan"
+                else:
+                    hueristics="eucledian"
+
+                self.res = astar(start_state=start_state, goal_state= end_state ,heuristic=hueristics)
 
             if self.res[0]==False:
                 self.show_info('No solution')
@@ -394,8 +425,7 @@ class Ui_MainWindow(object):
                 self.step_window.setupUi(self.form)
                 self.step_window.init_solution(self.res[1])
                 self.form.show()
-
-            
+                
 
     def checkValues(self):
         values = [
@@ -449,6 +479,13 @@ class Ui_MainWindow(object):
         msg.setIcon(QtWidgets.QMessageBox.Critical)
         msg.exec_()
         return
+    def show_radios(self):
+        if self.comboBox.currentText() == 'A*':
+            self.radioButtons1.show()
+            self.radioButtons2.show()
+        else:
+            self.radioButtons1.hide()
+            self.radioButtons2.hide()
 
 
 if __name__ == "__main__":
