@@ -24,7 +24,7 @@ class Steps_window(object):
         self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_3.setObjectName("frame_3")
         self.label = QtWidgets.QLabel(self.frame_3)
-        self.label.setGeometry(QtCore.QRect(170, 30, 450, 51))
+        self.label.setGeometry(QtCore.QRect(170, 30, 550, 51))
         font = QtGui.QFont()
         font.setPointSize(14)
         font.setBold(True)
