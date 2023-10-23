@@ -7,7 +7,7 @@ from utils import *
 RED = "\033[91m"
 RESET = "\033[0m"
 
-start_state = "762853014"
+start_state = "865047231"
 goal_state = "012345678"
 
 if is_solvable(start_state):

@@ -72,5 +72,3 @@ def print_path(parent, goal_state):
     #         print("-------")
 
     return (cost, path)
-
-   
