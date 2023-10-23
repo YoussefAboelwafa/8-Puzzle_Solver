@@ -418,12 +418,13 @@ class Ui_MainWindow(object):
                 self.res = astar(start_state=start_state, goal_state= end_state ,heuristic=hueristics)
 
             if self.res[0]==False:
-                self.show_info('No solution')
+                self.show_error("NO Solution")
+                return
             else:
                 self.form = QtWidgets.QWidget()
                 self.step_window = Steps_window()
                 self.step_window.setupUi(self.form)
-                self.step_window.init_solution(self.res[1])
+                self.step_window.init_solution((self.res[1],self.res[2],self.res[3]))
                 self.form.show()
                 
 

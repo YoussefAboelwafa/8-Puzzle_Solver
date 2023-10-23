@@ -138,6 +138,20 @@ class Steps_window(object):
         self.label_12.setObjectName("label_12")
         self.horizontalLayout.addWidget(self.frame_2)
 
+        font1 = QtGui.QFont()
+        font1.setPointSize(10)
+        font1.setBold(True)
+        font1.setWeight(65)
+        self.nodes_label=QtWidgets.QLabel(self.frame_4)
+        self.nodes_label.setGeometry(QtCore.QRect(80, 100, 250, 50))
+        self.nodes_label.setObjectName("nodes_label")
+        self.nodes_label.setFont(font1)
+
+        self.depth=QtWidgets.QLabel(self.frame_4)
+        self.depth.setGeometry(QtCore.QRect(80, 150, 250, 50))
+        self.depth.setObjectName("depth")
+        self.depth.setFont(font1)
+
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
@@ -187,12 +201,15 @@ class Steps_window(object):
         self.pushButton_2.setText(_translate("MainWindow", "Next State"))
         self.label_13.setText(_translate("MainWindow", "/"))
     def init_solution(self, res):
-        self.cost=str(res[0])
+        self.cost=str(res[0][0])
         _translate = QtCore.QCoreApplication.translate
         self.label.setText(_translate("MainWindow", "Number of states to reach goal \"Cost\" is "+self.cost))
-        self.res_list =res[1]
-        self.label_13.setText(_translate("MainWindow", "/"+str(res[0])))
+        self.res_list =res[0][1]
+        self.label_13.setText(_translate("MainWindow", "/"+str(res[0][0])))
         self.lineEdit.setText("0")
+        self.nodes_label.setText(_translate("MainWindow","Nodes Exbanded : "+ str(res[1])))
+        self.depth.setText(_translate("MainWindow","Search Depth : "+ str(res[2])))
+        
         cur_state=self.res_list[0]
         for i in range(9):
             self.label_list[i].setText(_translate("MainWindow", str(cur_state[i])))
@@ -200,6 +217,7 @@ class Steps_window(object):
                 self.label_list[i].setStyleSheet("color: red;")
             else:
                 self.label_list[i].setStyleSheet("color: black;")
+        
             
     def next(self):
         _translate = QtCore.QCoreApplication.translate
