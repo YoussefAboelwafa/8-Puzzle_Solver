@@ -1,5 +1,4 @@
 from utils import *
-import time
 
 
 # Define a depth-first search solver function
