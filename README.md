@@ -2,6 +2,9 @@
 
 8 Puzzle Solver Using Classical Search Algorithms: DFS | BFS | A\*
 
+![wallpaper](https://github.com/YoussefAboelwafa/8-Puzzle_Solver/assets/96186143/6f0edc1a-fe03-4f50-a8f7-c1eb3f9e820d)
+
+
 ## Deployment
 
 To Run Graphical Interface:
@@ -250,3 +253,9 @@ def eucledian(state, goal):
 </table>
 
 ## Graphical Interface
+
+![UI1](https://github.com/YoussefAboelwafa/8-Puzzle_Solver/assets/96186143/573a4c62-fcb4-4a35-b5c4-60ae64cfa08b)
+
+![UI2](https://github.com/YoussefAboelwafa/8-Puzzle_Solver/assets/96186143/b3dc7e2a-64fe-4be1-8b06-72017fe96189)
+
+
